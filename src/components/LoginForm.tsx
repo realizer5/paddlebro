@@ -63,7 +63,12 @@ export default function LoginForm({
                             </div>
                             <div className="grid gap-6">
                                 <div className="grid gap-2">
-                                    <Label htmlFor="email">Email</Label>
+                                    <div className="flex items-center">
+                                        <Label htmlFor="email">Email</Label>
+                                        <span
+                                            className="cursor-pointer ml-auto text-sm underline-offset-4 hover:underline"
+                                        >Use mobile number?</span>
+                                    </div>
                                     <Input
                                         id="email"
                                         type="email"
