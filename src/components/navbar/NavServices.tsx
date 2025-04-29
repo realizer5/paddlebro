@@ -15,7 +15,7 @@ export default function NavServices() {
                     Services
                 </NavigationMenuTrigger>
             </NavLink>
-            <NavigationMenuContent>
+            <NavigationMenuContent className="z-50">
                 <ul className="grid w-[300px] gap-3 p-4 md:w-[300px] md:grid-cols-2 lg:w-[300px] ">
                     <li>
                         <NavigationMenuLink asChild>
