@@ -119,3 +119,65 @@
         @apply bg-background text-foreground;
     }
 }
+
+.curve-container {
+    position: relative;
+    overflow: hidden;
+    height: 7rem;
+    z-index: 2;
+    top: -40px;
+    --curve-gradient: radial-gradient(50% 500% at 50% -420%,
+            rgba(166, 198, 216, 1) 80%,
+            rgba(255, 245, 217, 0.1) 100%),
+        var(--background);
+}
+
+.dark .curve-container {
+    --curve-gradient: radial-gradient(50% 500% at 50% -420%,
+            rgba(166, 198, 216, 0.4) 80%,
+            rgba(0, 10, 38, 0.1) 100%),
+        var(--background);
+}
+
+.curve {
+    width: 130%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    border: 4px solid transparent;
+    border-top-left-radius: 50% 100%;
+    border-top-right-radius: 50% 100%;
+    border-bottom: none;
+    background: var(--curve-gradient);
+    background-clip: padding-box;
+    position: absolute;
+    top: 0;
+    left: -15%;
+}
+
+
+.curve::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+    margin-top: -4px;
+    border-radius: inherit;
+    background: linear-gradient(to right,
+            rgba(166, 198, 216, 1) 16%,
+            rgba(15, 82, 186, 1),
+            rgba(0, 10, 38, 1),
+            rgba(15, 82, 186, 1),
+            rgba(166, 198, 216, 1) 84%);
+}
+
+@media (max-width: 960px) {
+    .curve {
+        width: 180%;
+        left: -40%;
+    }
+
+}
