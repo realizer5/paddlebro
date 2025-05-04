@@ -6,12 +6,11 @@ import {
 } from "@/components/ui/carousel";
 import { Button } from "@/components/ui/button";
 import Autoplay from "embla-carousel-autoplay";
-import { useEffect, useRef, useState } from "react";
+import { useRef } from "react";
 import { AlarmClock, Bike, CircleDollarSign, Shield, ShieldCheck, Wrench } from "lucide-react";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 
 export default function Home() {
-    const [liveCounter, setLiveCounter] = useState("");
 
     const plugin = useRef(
         Autoplay({ delay: 2000 })
@@ -24,6 +23,7 @@ export default function Home() {
         { icon: <Bike size={48} />, text: "5,000+ Bikes Serviced" },
         { icon: <AlarmClock size={48} />, text: "Same-Day Service" },
         { icon: <ShieldCheck size={48} />, text: "12-Month Warranty" },
+        { icon: <Shield size={48} />, text: "24/7 Emergency Service" },
         { icon: <CircleDollarSign size={48} />, text: "Secure Payments" },
     ];
 
@@ -69,7 +69,6 @@ export default function Home() {
                 </div>
             </div>
             <div className="p-4">
-                <div>{liveCounter}</div>
                 <Button className="cursor-pointer">Book Now</Button>
             </div>
             <div className="p-4">
